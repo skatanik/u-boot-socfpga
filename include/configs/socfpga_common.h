@@ -187,8 +187,8 @@
 	"fdtimage=socfpga.dtb\0" \
 	"fdtimagesize=0x7000\0" \
 	"mmcloadcmd=fatload\0" \
-	"mmcloadpart=1\0" \
-	"mmcroot=/dev/mmcblk0p2\0" \
+	"mmcloadpart=2\0" \
+	"mmcroot=/dev/mmcblk0p3\0" \
 	"qspiloadcs=0\0" \
 	"qspibootimageaddr=0xa0000\0" \
 	"qspifdtaddr=0x50000\0" \
@@ -227,7 +227,7 @@
 	CONFIG_KSZ9021_DATA_SKEW_ENV "=" \
 		__stringify(CONFIG_KSZ9021_DATA_SKEW_VAL) "\0" \
 	"scriptfile=u-boot.scr\0" \
-	"callscript=if fatload mmc 0:1 $fpgadata $scriptfile;" \
+	"callscript=if fatload mmc 0:2 $fpgadata $scriptfile;" \
 			"then source $fpgadata; " \
 		"else " \
 			"echo Optional boot script not found. " \
